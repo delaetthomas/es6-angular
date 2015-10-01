@@ -12,13 +12,9 @@ class SelectUser {
     };
     this.scope = true
   }
-
-  static instance() {
-    return new SelectUser();
-  }
 }
 
 angular.module('githubApp')
-  .directive('selectUserComponent', SelectUser.instance);
+  .directive('selectUserComponent', () => new SelectUser());
 
 export default SelectUser;
